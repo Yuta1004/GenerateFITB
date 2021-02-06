@@ -21,12 +21,15 @@ function step1() {
                                         .filter((elem, idx, self) => self.findIndex(e => e["word"] === elem["word"]) == idx);
 
                 for(var idx = 0; idx < word_class_table.length; ++ idx) {
+                    let word = word_class_table[idx]["word"];
                     var checkbox = document.createElement("input");
                     checkbox.type = "checkbox";
                     checkbox.name = "nouns";
-                    checkbox.value = word_class_table[idx]["word"];
+                    checkbox.id = word;
+                    checkbox.value = word;
                     var namelabel = document.createElement("label");
-                    namelabel.innerHTML = word_class_table[idx]["word"]+"<br>";
+                    namelabel.htmlFor = word;
+                    namelabel.innerHTML = " "+word+"<br>";
 
                     document.getElementById("selectNoun").appendChild(checkbox);
                     document.getElementById("selectNoun").appendChild(namelabel);
