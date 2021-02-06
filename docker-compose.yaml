@@ -1,0 +1,24 @@
+version: '3'
+services:
+  back:
+    build: ./env/back
+    ports:
+      - 31235:60000
+    restart: always
+    volumes:
+      - ./back/:/home/back/:ro
+    environment:
+      TZ: Asia/Tokyo
+    command: >
+      bash -c "cd /home/back && gunicorn --bind=0.0.0.0:60000 -w 1 app:app"
+  front:
+    image: nginx:1.19.1-alpine
+    ports:
+      - 47864:80
+    volumes:
+      - ./front/:/var/www/html/:ro
+      - ./env/front/nginx.conf:/etc/nginx/nginx.conf:ro
+    environment:
+      TZ: Asia/Tokyo
+    depends_on:
+      - back
