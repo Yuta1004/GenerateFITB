@@ -2,8 +2,6 @@ version: '3'
 services:
   back:
     build: ./env/back
-    ports:
-      - 31235:60000
     restart: always
     volumes:
       - ./back/:/home/back/:ro
