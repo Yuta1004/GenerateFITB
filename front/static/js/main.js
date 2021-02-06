@@ -7,7 +7,7 @@ function step1() {
     }
 
     var request = new XMLHttpRequest();
-    request.open('POST', location.protocol+"//"+location.host+"/back/parse");
+    request.open('POST', location.protocol+"//"+location.host+location.pathname+"back/parse");
     request.setRequestHeader("Content-Type", "text/plain");
     request.send(text);
     request.onreadystatechange = function () {
