@@ -7,8 +7,9 @@ function step1() {
     }
 
     var request = new XMLHttpRequest();
-    request.open('GET', location.protocol+"//"+location.host+"/back/parse?target="+text);
-    request.send(null);
+    request.open('POST', location.protocol+"//"+location.host+"/back/parse");
+    request.setRequestHeader("Content-Type", "text/plain");
+    request.send(text);
     request.onreadystatechange = function () {
         if(request.status == 200) {
             try {
