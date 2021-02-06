@@ -1,0 +1,10 @@
+Flask==0.12.2
+Flask-Bootstrap==3.3.7.1
+Flask-Classful==0.14.2
+Flask-Cors==3.0.3
+Flask-Login==0.4.1
+Flask-Slack==0.1.5
+gunicorn==20.0.4
+flake8==3.8.3
+requests==2.23.0
+mecab-python3==1.0.3
